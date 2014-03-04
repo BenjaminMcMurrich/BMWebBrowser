@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = 'BMWebBrowser'
-  s.version     = '0.1'
+  s.version     = '0.2'
   s.authors     = { 'Benjamin McMurrich' => 'benjamin@digidust.com' }
   s.homepage    = 'https://github.com/BenjaminMcMurrich/BMWebBrowser'
   s.summary     = 'Embedded Web Browser like in the Twitter and Facebook apps'
