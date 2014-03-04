@@ -33,6 +33,11 @@ enum actionSheetButtonIndex {
 
 @implementation BMWebBrowser
 
++ (id)appearance
+{
+    return [MZAppearance appearanceForClass:[self class]];
+}
+
 + (BMWebBrowser*) viewControllerWithURL:(NSURL*)URL {
     BMWebBrowser * webBrowser = [[BMWebBrowser alloc] initWithURL:URL];
     return webBrowser;
@@ -75,12 +80,23 @@ enum actionSheetButtonIndex {
     self.webView.delegate = self;
     [self.view addSubview:self.webView];
     
+    
+    [self setDefaultSettings];
+    [[[self class] appearance] applyInvocationTo:self];
+    
     [self initTitleView];
     [self initProgressView];
     [self initToolBar];
     
+    
+    
     [self.webView loadRequest:[NSURLRequest requestWithURL:self.url]];
     
+}
+
+-(void) setDefaultSettings {
+    self.urlLabelTextColor = [UIColor lightTextColor];
+    self.progressViewTrackTintColor = [UIColor clearColor];
 }
 
 -(void) initTitleView {
@@ -94,13 +110,13 @@ enum actionSheetButtonIndex {
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     titleLabel.font = [UIFont boldSystemFontOfSize:17];
-    titleLabel.text = NSLocalizedString(@"Chargement...", @"");
+    titleLabel.text = NSLocalizedString(@"Loading...", @"");
     
     [titleView addSubview:titleLabel];
     
     urlLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 25, titleView.frame.size.width, 15)];
     urlLabel.backgroundColor = [UIColor clearColor];
-    urlLabel.textColor = [UIColor lightTextColor];
+    urlLabel.textColor = self.urlLabelTextColor;
     urlLabel.textAlignment = NSTextAlignmentCenter;
     urlLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     urlLabel.font = [UIFont systemFontOfSize:12];
@@ -115,6 +131,7 @@ enum actionSheetButtonIndex {
     
     progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 5)];
     progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    if(self.progressViewTintColor) progressView.tintColor = self.progressViewTintColor;
     progressView.trackTintColor = [UIColor clearColor];
     [self.view addSubview:progressView];
 }

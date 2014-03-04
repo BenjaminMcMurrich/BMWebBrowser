@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BMWebBrowser.h"
 
 #define kColorBlue [UIColor colorWithRed:10/255.0 green:165/255.0 blue:221/255.0 alpha:1]
 
@@ -14,7 +15,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
     self.window.tintColor = kColorBlue;
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -22,6 +22,8 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [[BMWebBrowser appearance] setProgressViewTintColor:[UIColor darkGrayColor]];
     
     return YES;
 }

@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source_files = 'BMWebBrowser'
   s.public_header_files = 'BMWebBrowser/*.h'
+  s.dependency "MZAppearance", "~> 1.1"
   s.resources = "BMWebBrowser/assets/*.png"
-
   s.ios.deployment_target = '7.0'
 end
