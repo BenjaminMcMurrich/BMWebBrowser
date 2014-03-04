@@ -202,15 +202,15 @@ enum actionSheetButtonIndex {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] init];
     actionSheet.title = urlString;
     actionSheet.delegate = self;
-    [actionSheet addButtonWithTitle:NSLocalizedString(@"Partager le lien", nil)];
-    [actionSheet addButtonWithTitle:NSLocalizedString(@"Ouvrir dans Safari", nil)];
+    [actionSheet addButtonWithTitle:NSLocalizedString(@"Share link", nil)];
+    [actionSheet addButtonWithTitle:NSLocalizedString(@"Open in Safari", nil)];
     
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"googlechrome://"]]) {
         // Chrome is installed, add the option to open in chrome.
-        [actionSheet addButtonWithTitle:NSLocalizedString(@"Ouvrir dans Chrome", nil)];
+        [actionSheet addButtonWithTitle:NSLocalizedString(@"Open in Chrome", nil)];
     }
     
-    actionSheet.cancelButtonIndex = [actionSheet addButtonWithTitle:NSLocalizedString(@"Annuler", nil)];
+    actionSheet.cancelButtonIndex = [actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
     
     if (self.navigationController.tabBarController != nil) {
         [actionSheet showFromTabBar:self.navigationController.tabBarController.tabBar];
@@ -295,7 +295,7 @@ enum actionSheetButtonIndex {
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     [self toggleBackForwardButtons];
-    self.title = NSLocalizedString(@"Chargement...", @"");
+    self.title = NSLocalizedString(@"Loading...", @"");
     
 
     [UIView animateWithDuration:0.25
