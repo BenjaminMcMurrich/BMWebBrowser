@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage    = 'https://github.com/BenjaminMcMurrich/BMWebBrowser'
   s.summary     = 'Embedded Web Browser like in the Twitter and Facebook apps'
   s.source      = { :git => 'https://github.com/BenjaminMcMurrich/BMWebBrowser.git',
-                    :tag => '0.1' }
+                    :tag => '0.2' }
                     
   s.platform = :ios, '7.0'
   s.requires_arc = true
