@@ -47,7 +47,7 @@
                                     <action selector="presentModally:" destination="pjF-WD-APq" eventType="touchUpInside" id="m34-Pu-HP2"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://mcmurrich.fr" borderStyle="roundedRect" placeholder="Example URL" minimumFontSize="17" id="aVe-67-Z1r">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://digidust.com" borderStyle="roundedRect" placeholder="Example URL" minimumFontSize="17" id="aVe-67-Z1r">
                                 <rect key="frame" x="44" y="174" width="232" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

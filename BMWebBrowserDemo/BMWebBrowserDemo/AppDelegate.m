@@ -23,8 +23,6 @@
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    [[BMWebBrowser appearance] setProgressViewTintColor:[UIColor darkGrayColor]];
-    
     return YES;
 }
 							
